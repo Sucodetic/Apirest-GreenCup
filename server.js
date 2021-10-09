@@ -4,7 +4,7 @@ import morgan from "morgan";
 import Cors from "cors";
 import { connectServer } from "./db/db.js";
 import rutasProducto from "./views/product/routes.js";
-//mport rutasUsuario from "./views/user/routes.js";
+import rutasUsuario from "./views/user/routes.js";
 //import rutasVenta from "./views/sale/routes.js";
 
 dotenv.config({ path: "./.env" });
@@ -17,7 +17,7 @@ app.use(morgan("dev"));
 app.use(Express.json());
 app.use(Cors());
 app.use(rutasProducto);
-//app.use(rutasUsuario);
+app.use(rutasUsuario);
 //app.use(rutasVenta);
 
 const main = () => {
