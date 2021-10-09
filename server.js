@@ -11,6 +11,8 @@ dotenv.config({ path: "./.env" });
 
 const app = Express();
 
+app.set("json spaces", 2);
+
 app.use(morgan("dev"));
 app.use(Express.json());
 app.use(Cors());
