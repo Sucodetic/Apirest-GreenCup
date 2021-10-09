@@ -1,0 +1,20 @@
+{
+  "name": "Apirest-GreenCup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Sucodetic/Apirest-GreenCup.git",
+  "author": "Jhonathan Pérez Ortega <jhperez.ortega@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.13"
+  }
+}
