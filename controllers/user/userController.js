@@ -27,7 +27,7 @@ const editUser = async (userId, data, callback) => {
     $set: data,
   };
   const baseDeDatos = getDB();
-  await baseDeDatos.collection("usurio").findOneAndUpdate(filtroUsuario, operacion, { upsert: true, returnOriginal: true }, callback);
+  await baseDeDatos.collection("usuario").findOneAndUpdate(filtroUsuario, operacion, { upsert: true, returnOriginal: true }, callback);
 };
 
 const deleteUser = async (userId, callback) => {
