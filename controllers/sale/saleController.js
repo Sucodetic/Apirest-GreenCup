@@ -39,7 +39,7 @@ const editSale = async (saleId, data, callback) => {
 const deleteSale = async (saleId, callback) => {
   const filtroVenta = { _id: new ObjectId(saleId) };
   const baseDeDatos = getDB();
-  await baseDeDatos.collection("sale").deleteOne(filtroVenta, callback);
+  await baseDeDatos.collection("venta").deleteOne(filtroVenta, callback);
 };
 
 export { getAllSales, createSale, editSale, deleteSale };
