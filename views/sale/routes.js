@@ -1,5 +1,5 @@
 import Express from "express";
-import { createSale, createUser, deleteSale, deleteUser, editSale, editUser, getAllusers } from "../../controllers/sale/saleController";
+import { getAllSales, createSale, deleteSale, editSale } from "../../controllers/sale/saleController";
 
 const rutasVentas = Express.Router();
 
@@ -12,7 +12,7 @@ const genericCallback = (res) => (err, result) => {
 };
 
 rutasVentas.route("/ventas").get((req, res) => {
-  getAllusers(genericCallback(res));
+  getAllSales(genericCallback(res));
 });
 
 rutasVentas.route("/ventas").post((req, res) => {
