@@ -1,5 +1,5 @@
 import Express from "express";
-import { getAllSales, createSale, deleteSale, editSale } from "../../controllers/sale/saleController";
+import { getAllSales, createSale, deleteSale, editSale } from "../../controllers/sale/saleController.js";
 
 const rutasVentas = Express.Router();
 
