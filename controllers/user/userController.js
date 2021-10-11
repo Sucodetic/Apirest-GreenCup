@@ -6,6 +6,17 @@ const getAllusers = async (callback) => {
   await baseDeDatos.collection("usuario").find().limit(50).toArray(callback);
 };
 
+const getUserByRol = async (rol, callback) => {
+  const baseDeDatos = getDB();
+  await baseDeDatos
+    .collection("usuario")
+    .find({
+      rol: rol,
+    })
+    .limit(10)
+    .toArray(callback);
+};
+
 const createUser = async (datosUsuario, callback) => {
   const baseDeDatos = getDB();
   console.log("llaves: ", Object.keys(datosUsuario));
@@ -36,4 +47,4 @@ const deleteUser = async (userId, callback) => {
   await baseDeDatos.collection("usuario").deleteOne(filtroUsuario, callback);
 };
 
-export { getAllusers, createUser, editUser, deleteUser };
+export { getAllusers, createUser, editUser, deleteUser, getUserByRol };
