@@ -6,20 +6,20 @@ const getAllSales = async (callback) => {
   await baseDeDatos.collection("venta").find().limit(50).toArray(callback);
 };
 
-const createSale = async (datosUsuario, callback) => {
+const createSale = async (datosVenta, callback) => {
   const baseDeDatos = getDB();
   console.log("llaves: ", Object.keys(datosVenta));
   if (
-    Object.keys(datosUsuario).includes("idVenta") &&
-    Object.keys(datosUsuario).includes("valorVenta") &&
-    Object.keys(datosUsuario).includes("idProducto") &&
-    Object.keys(datosUsuario).includes("cantidad") &&
-    Object.keys(datosUsuario).includes("precioUnitario") &&
-    Object.keys(datosUsuario).includes("fecha") &&
-    Object.keys(datosUsuario).includes("nombreCliente") &&
-    Object.keys(datosUsuario).includes("documentoCliente") &&
-    Object.keys(datosUsuario).includes("vendedor") &&
-    Object.keys(datosUsuario).includes("estado")
+    Object.keys(datosVenta).includes("idVenta") &&
+    Object.keys(datosVenta).includes("valorVenta") &&
+    Object.keys(datosVenta).includes("idProducto") &&
+    Object.keys(datosVenta).includes("cantidad") &&
+    Object.keys(datosVenta).includes("precioUnitario") &&
+    Object.keys(datosVenta).includes("fecha") &&
+    Object.keys(datosVenta).includes("nombreCliente") &&
+    Object.keys(datosVenta).includes("documentoCliente") &&
+    Object.keys(datosVenta).includes("vendedor") &&
+    Object.keys(datosVenta).includes("estado")
   ) {
     await baseDeDatos.collection("venta").insertOne(datosVenta, callback);
   } else {
