@@ -5,7 +5,7 @@ import Cors from "cors";
 import { connectServer } from "./db/db.js";
 import rutasProducto from "./views/product/routes.js";
 import rutasUsuario from "./views/user/routes.js";
-//import rutasVenta from "./views/sale/routes.js";
+import rutasVenta from "./views/sale/routes.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -18,7 +18,7 @@ app.use(Express.json());
 app.use(Cors());
 app.use(rutasProducto);
 app.use(rutasUsuario);
-//app.use(rutasVenta);
+app.use(rutasVenta);
 
 const main = () => {
   return app.listen(process.env.PORT, () => {
